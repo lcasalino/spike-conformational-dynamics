@@ -1,4 +1,4 @@
-# Spike geometry analyses
+# Spike conformational dynamics analyses
 
 *Developed and written by Lorenzo Casalino (UC San Diego).*
 
