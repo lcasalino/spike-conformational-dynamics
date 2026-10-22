@@ -1,0 +1,117 @@
+Sampling and temporal robustness of spike conformational observables
+RAV: 29 spikes, last 1760 frames (352 ns) each = 10.21 us aggregate
+Single-spike: 15 replicas (open 6, closed 3, mutant 6), 102448 frames = 10.24 us aggregate
+All uncertainties are SEM (or 95% CI) with spikes / replicas as the independent unit.
+
+=== Hip tilt angle (°) ===
+  tau_int RAV   : median 22.8 ns (IQR 14.8-30.1; range 7.2-37.4)  -> N_eff ~ 286
+  tau_int SS    : median 21.7 ns (range 1.7-92.8)  -> N_eff ~ 353
+  RAV mean      : 20.21 ± 1.35 (SEM over spikes); block-averaging SEM 0.13; naive per-frame SEM 0.036
+  variability   : between-spike SD 7.26, within-spike SD 4.09, ICC 0.76
+  fluctuation   : mean per-trajectory SD, RAV 3.98 ± 0.18 (n=29) vs SS 3.97 ± 0.16 (n=15); ratio 1.00, Mann-Whitney p = 0.921 [SS over 154-506 ns, segments 194-352 ns]
+                  check, SS last 352 ns: 4.21, p = 0.458
+  persistence   : r(per-spike mean, 1st vs 2nd half) = 0.82; r(first vs last 88 ns) = 0.63
+  per-spike means range 7.35-32.96; SS replica means range 8.53-26.46
+  blocks (last 352 ns, 4 x 88 ns): 20.60±1.18, 20.26±1.52, 20.03±1.52, 19.94±1.57
+  blocks (full 506 ns, 5 x 101 ns): 18.78±1.16, 20.33±1.15, 20.49±1.39, 20.03±1.55, 19.98±1.54
+  drift in window: -0.212 ± 0.465 per 100 ns (p = 0.651); total over 352 ns -0.75 = 0.18 within-spike SD
+  JS distance first vs last 88-ns block: 0.253 (spike-resampling 95% noise floor 0.286)
+  RAV vs SS     : mean 20.21 vs 13.47, diff +6.74 [95% CI +3.46, +9.94]
+                  KDE mode 18.82 [16.73, 25.85] vs 11.62 [9.10, 13.32]
+
+=== Knee tilt angle (°) ===
+  tau_int RAV   : median 17.5 ns (IQR 9.7-24.3; range 1.7-37.4)  -> N_eff ~ 488
+  tau_int SS    : median 31.2 ns (range 4.1-66.1)  -> N_eff ~ 262
+  RAV mean      : 24.59 ± 1.43 (SEM over spikes); block-averaging SEM 0.16; naive per-frame SEM 0.041
+  variability   : between-spike SD 7.72, within-spike SD 5.21, ICC 0.68
+  fluctuation   : mean per-trajectory SD, RAV 5.02 ± 0.26 (n=29) vs SS 5.89 ± 0.38 (n=15); ratio 0.85, Mann-Whitney p = 0.0449 [SS over 154-506 ns, segments 194-352 ns]
+                  check, SS last 352 ns: 5.56, p = 0.198
+  persistence   : r(per-spike mean, 1st vs 2nd half) = 0.77; r(first vs last 88 ns) = 0.59
+  per-spike means range 10.43-43.69; SS replica means range 8.53-34.44
+  blocks (last 352 ns, 4 x 88 ns): 24.57±1.60, 24.18±1.52, 24.90±1.56, 24.71±1.65
+  blocks (full 506 ns, 5 x 101 ns): 21.73±1.66, 24.26±1.54, 24.21±1.56, 24.83±1.52, 24.73±1.64
+  drift in window: +0.125 ± 0.554 per 100 ns (p = 0.824); total over 352 ns +0.44 = 0.08 within-spike SD
+  JS distance first vs last 88-ns block: 0.075 (spike-resampling 95% noise floor 0.271)
+  RAV vs SS     : mean 24.59 vs 18.39, diff +6.20 [95% CI +0.60, +11.16]
+                  KDE mode 27.58 [14.86, 29.71] vs 13.54 [9.53, 19.55]
+
+=== Ankle tilt angle (°) ===
+  tau_int RAV   : median 15.9 ns (IQR 9.2-27.4; range 4.6-38.6)  -> N_eff ~ 407
+  tau_int SS    : median 28.8 ns (range 9.0-112.2)  -> N_eff ~ 178
+  RAV mean      : 15.01 ± 1.35 (SEM over spikes); block-averaging SEM 0.11; naive per-frame SEM 0.035
+  variability   : between-spike SD 7.29, within-spike SD 3.61, ICC 0.80
+  fluctuation   : mean per-trajectory SD, RAV 3.47 ± 0.19 (n=29) vs SS 4.92 ± 0.35 (n=15); ratio 0.71, Mann-Whitney p = 0.000248 [SS over 154-506 ns, segments 194-352 ns]
+                  check, SS last 352 ns: 4.94, p = 0.000759
+  persistence   : r(per-spike mean, 1st vs 2nd half) = 0.89; r(first vs last 88 ns) = 0.80
+  per-spike means range 4.16-30.98; SS replica means range 7.31-28.09
+  blocks (last 352 ns, 4 x 88 ns): 14.30±1.22, 14.62±1.33, 15.13±1.49, 15.98±1.63
+  blocks (full 506 ns, 5 x 101 ns): 12.47±0.86, 14.60±1.19, 14.17±1.27, 15.12±1.41, 15.87±1.64
+  drift in window: +0.583 ± 0.371 per 100 ns (p = 0.127); total over 352 ns +2.05 = 0.57 within-spike SD
+  JS distance first vs last 88-ns block: 0.203 (spike-resampling 95% noise floor 0.279)
+  RAV vs SS     : mean 15.01 vs 19.25, diff -4.25 [95% CI -8.14, -0.15]
+                  KDE mode 11.46 [5.47, 24.36] vs 23.26 [8.06, 24.36]
+
+=== NTD triangle area (Å²) ===
+  tau_int RAV   : median 23.7 ns (IQR 15.9-29.3; range 3.9-38.3)  -> N_eff ~ 302
+  tau_int SS    : median 31.0 ns (range 13.0-114.3)  -> N_eff ~ 164
+  RAV mean      : 3065.23 ± 14.47 (SEM over spikes); block-averaging SEM 1.37; naive per-frame SEM 0.388
+  variability   : between-spike SD 77.95, within-spike SD 42.57, ICC 0.77
+  fluctuation   : mean per-trajectory SD, RAV 41.10 ± 2.09 (n=29) vs SS 54.40 ± 5.86 (n=15); ratio 0.76, Mann-Whitney p = 0.0788 [SS over 154-506 ns, segments 194-352 ns]
+                  check, SS last 352 ns: 50.57, p = 0.334
+  persistence   : r(per-spike mean, 1st vs 2nd half) = 0.84; r(first vs last 88 ns) = 0.67
+  per-spike means range 2904.04-3219.77; SS replica means range 2618.09-3121.29
+  blocks (last 352 ns, 4 x 88 ns): 3081.16±14.34, 3067.22±16.08, 3061.38±15.52, 3051.18±16.08
+  blocks (full 506 ns, 5 x 101 ns): 3070.34±12.64, 3086.47±12.12, 3071.16±15.83, 3062.77±15.51, 3052.64±15.93
+  drift in window: -10.616 ± 4.661 per 100 ns (p = 0.0306); total over 352 ns -37.37 = 0.88 within-spike SD
+  JS distance first vs last 88-ns block: 0.261 (spike-resampling 95% noise floor 0.304)
+  RAV vs SS     : mean 3065.23 vs 2870.91, diff +194.33 [95% CI +101.07, +277.73]
+                  KDE mode 3040.39 [3014.20, 3078.91] vs 2785.00 [2652.39, 3070.72]
+
+=== RBD–CH distance (A) (Å) ===
+  tau_int RAV   : median 15.5 ns (IQR 8.3-27.2; range 5.6-38.0)  -> N_eff ~ 413
+  tau_int SS    : median 34.6 ns (range 10.8-108.7)  -> N_eff ~ 170
+  RAV mean      : 58.04 ± 1.41 (SEM over spikes); block-averaging SEM 0.02; naive per-frame SEM 0.033
+  variability   : between-spike SD 7.57, within-spike SD 0.55, ICC 0.99
+  fluctuation   : mean per-trajectory SD, RAV 0.52 ± 0.03 (n=29) vs SS 0.65 ± 0.04 (n=15); ratio 0.81, Mann-Whitney p = 0.0152 [SS over 154-506 ns, segments 194-352 ns]
+                  check, SS last 352 ns: 0.59, p = 0.113
+  persistence   : r(per-spike mean, 1st vs 2nd half) = 1.00; r(first vs last 88 ns) = 0.99
+  per-spike means range 50.59-72.15; SS replica means range 52.46-70.70
+  blocks (last 352 ns, 4 x 88 ns): 58.12±1.42, 58.06±1.44, 57.96±1.40, 58.00±1.38
+  blocks (full 506 ns, 5 x 101 ns): 57.75±1.44, 57.99±1.43, 58.11±1.43, 57.98±1.41, 57.99±1.38
+  drift in window: -0.047 ± 0.058 per 100 ns (p = 0.426); total over 352 ns -0.17 = 0.30 within-spike SD
+  JS distance first vs last 88-ns block: 0.215 (spike-resampling 95% noise floor 0.437)
+  RAV vs SS     : mean 58.04 vs 65.43, diff -7.40 [95% CI -10.97, -3.10]
+                  KDE mode 53.18 [52.57, 53.68] vs 67.71 [52.96, 68.61]
+
+=== RBD–CH distance (B) (Å) ===
+  tau_int RAV   : median 16.3 ns (IQR 8.0-24.5; range 3.6-37.1)  -> N_eff ~ 426
+  tau_int SS    : median 26.4 ns (range 2.2-103.2)  -> N_eff ~ 358
+  RAV mean      : 52.54 ± 0.23 (SEM over spikes); block-averaging SEM 0.01; naive per-frame SEM 0.006
+  variability   : between-spike SD 1.24, within-spike SD 0.50, ICC 0.86
+  fluctuation   : mean per-trajectory SD, RAV 0.48 ± 0.02 (n=29) vs SS 0.54 ± 0.04 (n=15); ratio 0.89, Mann-Whitney p = 0.373 [SS over 154-506 ns, segments 194-352 ns]
+                  check, SS last 352 ns: 0.56, p = 0.98
+  persistence   : r(per-spike mean, 1st vs 2nd half) = 0.92; r(first vs last 88 ns) = 0.84
+  per-spike means range 50.06-57.14; SS replica means range 50.54-55.84
+  blocks (last 352 ns, 4 x 88 ns): 52.68±0.23, 52.47±0.22, 52.48±0.25, 52.52±0.25
+  blocks (full 506 ns, 5 x 101 ns): 52.57±0.16, 52.74±0.21, 52.52±0.23, 52.48±0.24, 52.51±0.25
+  drift in window: -0.057 ± 0.051 per 100 ns (p = 0.281); total over 352 ns -0.20 = 0.40 within-spike SD
+  JS distance first vs last 88-ns block: 0.191 (spike-resampling 95% noise floor 0.319)
+  RAV vs SS     : mean 52.54 vs 52.97, diff -0.43 [95% CI -1.53, +0.59]
+                  KDE mode 52.42 [51.69, 52.92] vs 51.73 [51.29, 55.24]
+
+=== RBD–CH distance (C) (Å) ===
+  tau_int RAV   : median 18.6 ns (IQR 13.9-31.4; range 1.6-39.6)  -> N_eff ~ 465
+  tau_int SS    : median 31.2 ns (range 5.0-91.9)  -> N_eff ~ 226
+  RAV mean      : 54.30 ± 0.25 (SEM over spikes); block-averaging SEM 0.02; naive per-frame SEM 0.006
+  variability   : between-spike SD 1.37, within-spike SD 0.57, ICC 0.85
+  fluctuation   : mean per-trajectory SD, RAV 0.54 ± 0.04 (n=29) vs SS 0.58 ± 0.05 (n=15); ratio 0.93, Mann-Whitney p = 0.504 [SS over 154-506 ns, segments 194-352 ns]
+                  check, SS last 352 ns: 0.50, p = 0.804
+  persistence   : r(per-spike mean, 1st vs 2nd half) = 0.87; r(first vs last 88 ns) = 0.74
+  per-spike means range 52.58-59.10; SS replica means range 50.29-54.50
+  blocks (last 352 ns, 4 x 88 ns): 54.33±0.27, 54.31±0.26, 54.29±0.27, 54.29±0.27
+  blocks (full 506 ns, 5 x 101 ns): 53.91±0.18, 54.30±0.27, 54.33±0.26, 54.27±0.26, 54.30±0.27
+  drift in window: -0.018 ± 0.073 per 100 ns (p = 0.803); total over 352 ns -0.06 = 0.11 within-spike SD
+  JS distance first vs last 88-ns block: 0.127 (spike-resampling 95% noise floor 0.324)
+  RAV vs SS     : mean 54.30 vs 52.60, diff +1.70 [95% CI +0.87, +2.58]
+                  KDE mode 54.63 [53.03, 54.82] vs 52.27 [51.86, 53.78]
+

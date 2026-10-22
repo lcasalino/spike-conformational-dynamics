@@ -49,6 +49,7 @@ Utilities (not required to reproduce the analysis):
 |------|------|
 | `plotting_for_RAV_paper.ipynb` | Notebook that reads the per-trajectory `.txt` files and produces the paper figures (KDE distributions; RBD distance in 4 time blocks). Reads only the value columns, recomputing the time axis from the frame index. |
 | `verify_refactor.tcl` | Self-test (plain `tclsh`, no VMD): checks the selection strings and the driver logic. Run `tclsh verify_refactor.tcl`. |
+| `sampling_robustness/` | Python analyses of sampling and temporal robustness for the spike observables (correlation times, drift, block stationarity, between- vs within-spike variability, RAV vs single-spike comparisons). Produces the two supplementary figures and their numbers. See its own `README.md`. |
 
 ## Requirements
 
